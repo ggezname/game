@@ -38,6 +38,8 @@ document.addEventListener('mousemove',e=>{if(!locked||!started||paused)return;ca
 document.addEventListener('keydown',e=>{keys[e.code]=true;if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();if(e.code==='Escape'&&started&&!paused){paused=true;document.querySelector('#pauseOverlay').hidden=false;document.exitPointerLock?.()}if(e.code==='Space'&&started&&camera.position.y<=1.72)velocityY=6;if(e.code==='ShiftLeft'||e.code==='ShiftRight')sprinting=true});
 document.addEventListener('keyup',e=>{keys[e.code]=false;if(e.code==='ShiftLeft'||e.code==='ShiftRight')sprinting=false});
 renderer.domElement.addEventListener('click',()=>{if(!started||paused)return;if(locked)fire();else if(matchMedia('(hover:hover) and (pointer:fine)').matches)renderer.domElement.requestPointerLock?.()});
+renderer.domElement.addEventListener('contextmenu',e=>e.preventDefault());
+renderer.domElement.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button===2&&started&&!paused)setAim(!aiming)});
 const stickZone=document.querySelector('#stickZone'),knob=document.querySelector('#stickKnob');
 stickZone.addEventListener('pointerdown',e=>{e.preventDefault();stickPointer=e.pointerId;stickZone.setPointerCapture(e.pointerId);updateStick(e)});
 stickZone.addEventListener('pointermove',e=>{if(e.pointerId===stickPointer)updateStick(e)});

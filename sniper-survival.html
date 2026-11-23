@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090711">
+<title>Sniper Survival 3D — Game Hub</title>
+<link rel="stylesheet" href="./sniper-survival.css">
+</head>
+<body>
+<header class="game-top"><a href="./index.html" class="back">← GAME HUB</a><div class="brand">SNIPER <b>SURVIVAL</b> <span>3D</span></div><span class="prototype">PROTOTYPE / TRAINING</span></header>
+<main class="game-shell">
+  <section class="game-intro"><div><p class="eyebrow">FIRST GAME · FOREST MAP</p><h1>SNIPER <span>SURVIVAL</span></h1><p>เอาตัวรอดในป่าลึกลับ ค้นหาเป้าหมาย และเป็นผู้เล่นคนสุดท้าย</p></div><div class="map-chip">🟢 MAP 01 · FOREST</div></section>
+  <section class="play-layout">
+    <div class="viewport-wrap">
+      <div id="gameViewport" class="viewport">
+        <div class="hud-top"><span id="modeLabel">TRAINING MODE</span><span id="targetCount">TARGETS 4</span><span id="timer">00:00</span></div>
+        <div class="crosshair"><i></i><b></b><i></i></div>
+        <div class="hud-bottom"><span>WASD MOVE · MOUSE LOOK</span><span id="status">กดเริ่มฝึกเพื่อเข้าสู่ป่า</span><span>CLICK TAG</span></div>
+        <div id="startOverlay" class="start-overlay"><div class="start-card"><span class="tag">FOREST / TRAINING</span><h2>พร้อมเข้าสู่สนามหรือยัง?</h2><p>ทดลองเดินสำรวจแผนที่ 3D และฝึกแท็กเป้าหมายในโหมดฝึกคนเดียว</p><button id="startBtn" class="primary">เริ่มฝึกเล่น <b>→</b></button><small>โหมดนี้ยังไม่ใช่การแข่งขันออนไลน์</small></div></div>
+        <div id="pauseOverlay" class="pause-overlay" hidden><div class="start-card"><h2>หยุดชั่วคราว</h2><button id="resumeBtn" class="primary">เล่นต่อ</button></div></div>
+      </div>
+      <div class="controls"><span>⌨ WASD เคลื่อนที่</span><span>🖱 เมาส์มองรอบตัว</span><span>คลิกซ้าย แท็กเป้าหมาย</span><span>SPACE กระโดด</span><button id="resetBtn">เริ่มรอบใหม่ ↻</button></div>
+    </div>
+    <aside class="side-panel">
+      <div class="panel"><p class="eyebrow">MATCH SETUP</p><h3>ตั้งค่าห้องแข่งขัน</h3><label for="players">จำนวนผู้เล่น</label><select id="players" disabled><option>2 ผู้เล่น</option><option>3 ผู้เล่น</option><option>4 ผู้เล่น</option><option selected>6 ผู้เล่น</option><option>8 ผู้เล่น</option><option>10 ผู้เล่น</option></select><label>แผนที่</label><div class="map-select"><span>🌲</span><div><b>Forest</b><small>ป่า · แผนที่เริ่มต้น</small></div><strong>เลือกแล้ว</strong></div><button class="disabled-btn" disabled>ระบบออนไลน์กำลังพัฒนา</button><small class="note">การเล่น 2–10 คนต้องเชื่อมต่อเซิร์ฟเวอร์เกม ซึ่งยังไม่ได้ติดตั้ง</small></div>
+      <div class="panel stats"><p class="eyebrow">TRAINING STATS</p><div><span>เป้าหมายที่แท็กแล้ว</span><b id="hits">0 / 4</b></div><div><span>สถานะ</span><b id="roundState">ยังไม่เริ่ม</b></div><div><span>แผนที่</span><b>FOREST</b></div></div>
+      <div class="panel"><p class="eyebrow">NEXT UPDATE</p><h3>ONLINE BATTLE</h3><p class="muted">ระบบห้อง 2–10 คน การเกิดแบบสุ่ม ผู้ชมหลังตกรอบ และผู้ชนะคนสุดท้าย</p></div>
+    </aside>
+  </section>
+</main>
+<script type="module" src="./sniper-survival.js"></script>
+</body></html>
